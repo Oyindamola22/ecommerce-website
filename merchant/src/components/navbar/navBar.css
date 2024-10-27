@@ -1,0 +1,142 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Grey+Qo&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* General styling for the body and html to prevent overflow */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and borders in the total width/height */
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000d3;
+    height: 70px;
+    padding: 0 20px;
+    color: #fff;
+    position: relative;
+    z-index: 10; /* Ensure it appears above the overlay */
+    box-sizing: border-box;
+}
+/* Style for Merchant & Co. link */
+.logo a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Set text color to white */
+}
+
+/* Optional: Add a hover effect */
+.logo a:hover {
+    opacity: 0.8; /* Slight dim effect on hover */
+}
+
+
+/* Men and Women link styling */
+.men, .women {
+    text-decoration: none; /* Removes underline */
+    color: white; /* Sets text color to white */
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Optional hover effect */
+.men:hover, .women:hover {
+    color: #ccc; /* Slight color change on hover for effect */
+}
+
+/* Ensure flex items behave as expected */
+.mini {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+}
+.logo{
+    font-family: "Barlow", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.wear {
+    display: flex;
+    gap: 1.5rem
+}
+
+.search {
+    position: relative;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 700px;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 40px;
+    padding-right: 70px; /* Leave room for both icons */
+    border: 1px solid #ccc;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.clear-icon {
+    position: absolute;
+    right: 40px; /* Positioned before the search icon */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.icon {
+    gap: 1.5rem;
+    display: flex;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+/* Overlay to darken the background when searching */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Use viewport width to avoid overflow */
+    height: 100vh; /* Use viewport height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 5; /* Below the search input */
+    overflow: hidden; /* Ensure no overflow on the overlay */
+}
+
+/* Ensure the container and its elements stay above the overlay */
+.container,
+.mini,
+.wear,
+.search-input,
+.clear-icon,
+.search-icon,
+.icon {
+    z-index: 10;
+}
